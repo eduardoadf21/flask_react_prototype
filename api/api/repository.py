@@ -73,9 +73,18 @@ class imageRepository:
 
     def get_id(self, user_id):
         db = get_db()
-        return db.execute(
+        rows = db.execute(
             'SELECT * FROM image WHERE user_id = ?', (user_id,)
         ).fetchall()
+        images = []
+        for i in rows:
+            image = {}
+            image["filename"] = i["filename"]
+            image["path_name"] = i["path_name"]
+            image["user_id"] = i["user_id"]
+            image["id"] = i["id"]
+            images.append(image)
+        return images
 
 class postRepository:
     def timeline(self, username):

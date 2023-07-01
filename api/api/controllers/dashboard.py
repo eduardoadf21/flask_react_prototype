@@ -4,7 +4,7 @@ from werkzeug.exceptions import (abort, RequestEntityTooLarge)
 from werkzeug.utils import secure_filename
 
 from flask import (
-    Blueprint, flash, redirect, render_template, request, session, send_from_directory
+    Blueprint, flash, redirect, render_template, request, session, send_from_directory, jsonify
 )
 
 from api.utils.utils import PATH, FILE
@@ -29,7 +29,9 @@ def dashboard():
             if file == user_image['filename']:
                 filenames.append(file)
  
-    return render_template('user/index.html', images=filenames)
+    return jsonify(user_images)
+    #return render_template('user/index.html', images=filenames)
+
 
 @bp.route('/upload', methods=['POST'])
 def upload():
@@ -47,7 +49,8 @@ def upload():
     except RequestEntityTooLarge:
         return 'File is larger than the 16MB limit.'
 
-    return redirect('/dashboard')
+    return jsonify({"message": "upload success"})
+    #return redirect('/dashboard')
 
 @bp.route('/serve-image/<filename>', methods=['GET'])
 def serve_image(filename):

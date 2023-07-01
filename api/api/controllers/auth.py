@@ -89,13 +89,13 @@ def register_user():
         except:
             error = f"User {user['username']} is already registered."
         if error is None:
-            return jsonify(user),200
+            return jsonify(user),201
             #return redirect(url_for("register.users"))
         else:
             #flash(error)
             return jsonify({"error":error})
 
-    return '200'
+
     #return render_template('register.html')
 
 @bp.route('/users', methods=['GET'])
