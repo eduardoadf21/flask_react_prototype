@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 // import logo from './logo.svg';
 //import './App.css';
+//
+
 
 function App() {
 
-}
 
-export default App;
 
-/*
-function App() {
+
+	/*
 	const [users, setUsers] = useState([]);
 
 	async function test() {
@@ -27,11 +27,6 @@ function App() {
 			console.log("erro de chamada");
 		}
 	}
-
-	useEffect(() => {
-		test();
-	}, []);
-
 	return (
 		<div>
 			<h1>
@@ -54,7 +49,19 @@ function App() {
 			</h1>
 		</div>
 	);
+
+	useEffect(() => {
+		test();
+	}, []);
+
+
+
 }
 
+
+	*/
+}
+
+
 export default App;
-*/
+
