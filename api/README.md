@@ -1,24 +1,24 @@
 nesse diretório, crie o ambiente virtual
-```cmd
+```powershell
 py -3 -m venv .venv
 ```
 
 ative o ambiente virtual
-```cmd
+```powershell
 .venv/Scripts/Activate
 ```
 
 instale as dependências(flask,flask-cors)
-```cmd
+```powershell
 pip install -r requirements.txt
 ```
 
 exporte a variável de ambiente
-```cmd
-export FLASK_APP=api/__init__.py
+```powershell
+$env:FLASK_APP = "\api\__init__.py"
 ```
 execute a aplicação
-```cmd
+```powershell
 flask run
 ```
 
