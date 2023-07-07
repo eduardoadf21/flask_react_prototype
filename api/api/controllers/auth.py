@@ -4,7 +4,7 @@ import click
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify, make_response
 )
 
 from api.db import get_db
@@ -92,8 +92,8 @@ def register_user():
             return jsonify(user),201
             #return redirect(url_for("register.users"))
         else:
-            #flash(error)
-            return jsonify({"error":error})
+            error_description = jsonify({"error": error})
+            return make_response(error_description, 422)
 
 
     #return render_template('register.html')

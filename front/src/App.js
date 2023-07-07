@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PostUsers></PostUsers>
         <PostForm></PostForm>
+        <PostUsers></PostUsers>
       </div>
     );
   }

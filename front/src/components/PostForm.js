@@ -34,16 +34,21 @@ class PostForm extends Component{
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
+                    <h4>register</h4>
                     <div>
+                        username:<br></br>
                         <input type="text"name="username"value={username} onChange={this.changeHandler}></input>
                     </div>
                     <div>
+                        fullname:<br></br>
                         <input type="text"name="fullname"value={fullname} onChange={this.changeHandler}></input>
                     </div>
                     <div>
+                        email:<br></br>
                         <input type="text"name="email"value={email} onChange={this.changeHandler}></input>
                     </div>
                     <div>
+                        password:<br></br>
                         <input type="text"name="password"value={password} onChange={this.changeHandler}></input>
                     </div>
                     <button type="submit">Submit</button>

@@ -26,7 +26,7 @@ class PostUsers extends Component {
         const { users } = this.state
         return(
             <div>
-                List of users
+                <h4>list of users</h4>
                 {
                     users.length ?
                     users.map(user => <div key={user.id}>{user.username}</div>):
