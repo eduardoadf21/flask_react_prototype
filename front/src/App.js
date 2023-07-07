@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import PostUsers from './components/PostUsers';
+import PostForm from './components/PostForm'
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <PostUsers></PostUsers>
+        <PostForm></PostForm>
       </div>
     );
   }
