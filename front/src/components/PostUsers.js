@@ -29,7 +29,7 @@ class PostUsers extends Component {
                 <h4>list of users</h4>
                 {
                     users.length ?
-                    users.map(user => <div key={user.id}>{user.username}</div>):
+                    users.map(user => <div key={user.username}>{user.username}</div>):
                     null
                 }
             </div>

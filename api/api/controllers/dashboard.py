@@ -33,7 +33,8 @@ def dashboard():
     #return render_template('user/index.html', images=filenames)
 
 
-@bp.route('/upload', methods=['POST'])
+@bp.route('/upload', methods=['POST', 'OPTIONS'])
+@login_required
 def upload():
     user_id = session.get('user_id')
     try:
