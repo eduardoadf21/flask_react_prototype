@@ -90,10 +90,10 @@ def register_user():
         if error is None:
             try:
                 Users.insert(user['username'],user['fullname'],user['email'],password)
-                #return jsonify(user),201
+                return jsonify(user),201
             except:
                 error = f"User already registered."
-            #return redirect(url_for("register.users"))
+
         error_description = jsonify({"error": error})
         return make_response(error_description, 412)
 
