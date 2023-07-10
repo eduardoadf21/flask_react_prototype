@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -25,38 +24,31 @@ class App extends Component {
 		console.log(this.state.selectedFile);
 
 		axios.post("http://localhost:5000/upload", formData)
-      .then(response => {
+      	.then(response => {
           console.log(response)
-      })
-      .catch(error => {
+      	})
+      	.catch(error => {
           console.log(error)
-      })
+      	})
 	};
 
 	fileData = () => {
-
 		if (this.state.selectedFile) {
-
+			/* do something with the file data */
 			return (
 				<div>
-
-
-
 				</div>
-			);
+			); 
 		}
 	};
 
 	render() {
-
 		return (
 			<div>
 				<div>
-          <br></br>
-          <h4>upload</h4>
 					<input type="file" onChange={this.onFileChange} />
 					<button onClick={this.onFileUpload}>
-						Upload!
+						Upload
 					</button>
 				</div>
 				{this.fileData()}
